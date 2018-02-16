@@ -42,4 +42,5 @@ public class MoblileBean {
     public void setData(Data data) {
         this.data = data;
     }
+
 }

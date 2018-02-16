@@ -42,5 +42,4 @@ public class Data {
     public void setMobile(String mobile) {
         this.mobile = mobile;
     }
-
 }

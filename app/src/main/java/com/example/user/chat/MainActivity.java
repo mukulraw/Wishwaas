@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
@@ -28,16 +29,28 @@ public class MainActivity extends AppCompatActivity {
 
     ProgressBar bar;
 
+    ImageView back;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         old = findViewById(R.id.oldpassword);
+        back = findViewById(R.id.back);
         newpass = findViewById(R.id.password);
         confirm = findViewById(R.id.confirm);
         resetpassword = findViewById(R.id.resetpassword);
         bar = findViewById(R.id.progress);
+
+
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                finish();
+            }
+        });
 
         resetpassword.setOnClickListener(new View.OnClickListener() {
             @Override

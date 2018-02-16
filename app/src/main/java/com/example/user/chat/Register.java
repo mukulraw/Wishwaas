@@ -1,6 +1,8 @@
 package com.example.user.chat;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -31,10 +33,16 @@ public class Register extends AppCompatActivity {
 
     ProgressBar bar;
 
+    SharedPreferences pref;
+    SharedPreferences.Editor edit;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
+
+        pref = getSharedPreferences("pref" , Context.MODE_PRIVATE);
+        edit = pref.edit();
 
         login = findViewById(R.id.login);
         name = findViewById(R.id.name);
@@ -58,8 +66,8 @@ public class Register extends AppCompatActivity {
             public void onClick(View view) {
 
                 String u = name.getText().toString();
-                String p = pass.getText().toString();
-                String m = mobile.getText().toString();
+                final String p = pass.getText().toString();
+                final String m = mobile.getText().toString();
                 String c = confirm.getText().toString();
 
                 if (u.length() > 0) {
@@ -72,7 +80,7 @@ public class Register extends AppCompatActivity {
                             {
                                 bar.setVisibility(View.VISIBLE);
 
-                                Bean b = (Bean)getApplicationContext();
+                                final Bean b = (Bean)getApplicationContext();
 
                                 Retrofit retrofit = new Retrofit.Builder()
                                         .baseUrl(b.baseurl)
@@ -88,10 +96,28 @@ public class Register extends AppCompatActivity {
                                     public void onResponse(Call<SignBean> call, Response<SignBean> response) {
 
 
-                                        Toast.makeText(Register.this, response.body().getMessage(), Toast.LENGTH_SHORT).show();
+                                        if (Objects.equals(response.body().getStatus(), "1"))
 
-                                        Intent i = new Intent(Register.this, Login.class);
-                                        startActivity(i);
+                                        {
+
+                                            b.user_id = response.body().getData().getUserId();
+                                            b.usernmae = response.body().getData().getName();
+
+                                            edit.putString("mobile" , m);
+                                            edit.putString("password" , p);
+                                            edit.apply();
+
+                                            Intent i = new Intent(Register.this, Home.class);
+                                            startActivity(i);
+                                            finish();
+
+                                            Toast.makeText(Register.this, response.body().getMessage(), Toast.LENGTH_SHORT).show();
+
+                                        }else {
+
+                                            Toast.makeText(Register.this, response.body().getMessage(), Toast.LENGTH_SHORT).show();
+                                        }
+
 
                                         bar.setVisibility(View.GONE);
                                     }

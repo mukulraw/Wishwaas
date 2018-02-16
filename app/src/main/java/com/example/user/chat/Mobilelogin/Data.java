@@ -18,6 +18,15 @@ public class Data {
     @SerializedName("mobile")
     @Expose
     private String mobile;
+    @SerializedName("birth_date")
+    @Expose
+    private String birthDate;
+    @SerializedName("birth_time")
+    @Expose
+    private String birthTime;
+    @SerializedName("birth_place")
+    @Expose
+    private String birthPlace;
 
     public String getUserId() {
         return userId;
@@ -41,6 +50,30 @@ public class Data {
 
     public void setMobile(String mobile) {
         this.mobile = mobile;
+    }
+
+    public String getBirthDate() {
+        return birthDate;
+    }
+
+    public void setBirthDate(String birthDate) {
+        this.birthDate = birthDate;
+    }
+
+    public String getBirthTime() {
+        return birthTime;
+    }
+
+    public void setBirthTime(String birthTime) {
+        this.birthTime = birthTime;
+    }
+
+    public String getBirthPlace() {
+        return birthPlace;
+    }
+
+    public void setBirthPlace(String birthPlace) {
+        this.birthPlace = birthPlace;
     }
 
 

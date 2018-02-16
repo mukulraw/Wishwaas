@@ -161,6 +161,11 @@ public class Home extends AppCompatActivity {
             }
         });
 
+        Bean b = (Bean)getApplicationContext();
+
+        dob.setText(b.dob);
+        pdob.setText(b.pdob);
+        time.setText(b.time);
 
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -190,41 +195,65 @@ public class Home extends AppCompatActivity {
             public void onClick(View view) {
 
                 String p = pdob.getText().toString();
+                
+                
+                if (dob.length()>0){
+                    
+                    
+                    if (pdob.length()>0){
+                        
+                        
+                        if (time.length()>0){
 
-                bar.setVisibility(View.VISIBLE);
+                            bar.setVisibility(View.VISIBLE);
 
-                final Bean b = (Bean)getApplicationContext();
+                            final Bean b = (Bean)getApplicationContext();
 
-                Retrofit retrofit = new Retrofit.Builder()
-                        .baseUrl(b.baseurl)
-                        .addConverterFactory(ScalarsConverterFactory.create())
-                        .addConverterFactory(GsonConverterFactory.create())
-                        .build();
+                            Retrofit retrofit = new Retrofit.Builder()
+                                    .baseUrl(b.baseurl)
+                                    .addConverterFactory(ScalarsConverterFactory.create())
+                                    .addConverterFactory(GsonConverterFactory.create())
+                                    .build();
 
-                AllApi cr = retrofit.create(AllApi.class);
+                            AllApi cr = retrofit.create(AllApi.class);
 
-                Call<updateBean> call = cr.update(b.user_id , dob.getText().toString() , p ,time.getText().toString());
-                call.enqueue(new Callback<updateBean>() {
-                    @Override
-                    public void onResponse(Call<updateBean> call, Response<updateBean> response) {
+                            Call<updateBean> call = cr.update(b.user_id , dob.getText().toString() , p ,time.getText().toString());
+                            call.enqueue(new Callback<updateBean>() {
+                                @Override
+                                public void onResponse(Call<updateBean> call, Response<updateBean> response) {
 
-                        Toast.makeText(Home.this,response.body().getMessage(), Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(Home.this,response.body().getMessage(), Toast.LENGTH_SHORT).show();
 
-                        Intent i = new Intent(Home.this, ChatScreen.class);
-                        startActivity(i);
+                                    Intent i = new Intent(Home.this, ChatScreen.class);
+                                    startActivity(i);
 
-                        bar.setVisibility(View.GONE);
+                                    bar.setVisibility(View.GONE);
 
+                                }
+
+                                @Override
+                                public void onFailure(Call<updateBean> call, Throwable t) {
+
+                                    bar.setVisibility(View.GONE);
+
+
+                                }
+                            });
+
+
+                        }
+                        else {
+                            Toast.makeText(Home.this, "Invalid Time of Birth", Toast.LENGTH_SHORT).show();
+                        }
+                        
+                    }else {
+                        Toast.makeText(Home.this, "Invalid Place of Birth", Toast.LENGTH_SHORT).show();
                     }
+                    
+                }else {
+                    Toast.makeText(Home.this, "Invalid Date of Birth", Toast.LENGTH_SHORT).show();
+                }
 
-                    @Override
-                    public void onFailure(Call<updateBean> call, Throwable t) {
-
-                        bar.setVisibility(View.GONE);
-
-
-                    }
-                });
 
 
 

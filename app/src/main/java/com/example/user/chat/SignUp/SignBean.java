@@ -16,7 +16,7 @@ public class SignBean {
     @SerializedName("status")
     @Expose
     private String status;
-    @SerializedName("Data")
+    @SerializedName("data")
     @Expose
     private Data data;
 
@@ -43,5 +43,6 @@ public class SignBean {
     public void setData(Data data) {
         this.data = data;
     }
+
 
 }

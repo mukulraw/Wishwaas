@@ -39,10 +39,10 @@ public interface AllApi {
 
 
     @Multipart
-    @POST("wishwaas/api/user_view_msg.php")
+    @POST("wishwaas/api/user_send_msg.php")
     Call<Sendbean>send
             (@Part("user_id")String user ,
-             @Part("reply-message")String mobile
+             @Part("reply_message")String mobile
             );
 
 

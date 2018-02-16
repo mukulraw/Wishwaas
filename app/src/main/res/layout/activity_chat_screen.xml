@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#ffffff"
     android:orientation="vertical"
 
     tools:context="com.example.user.chat.ChatScreen">
@@ -60,6 +61,7 @@
                 <EditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:maxLines="2"
                     android:id="@+id/type"
                     android:padding="10dp"
                     android:textSize="12sp"
@@ -74,6 +76,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:layout_marginTop="5dp"
+                android:layout_gravity="center_vertical"
                 android:layout_marginBottom="5dp"
                 android:layout_weight="1">
 
@@ -89,6 +92,7 @@
                     android:minHeight="0dp"
                     android:padding="8dp"
                     android:paddingStart="5dp"
+                    android:layout_centerVertical="true"
                     android:gravity="center"
                     android:textAlignment="center"
                     android:paddingEnd="5dp"

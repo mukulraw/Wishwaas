@@ -155,6 +155,7 @@ public class ChatScreen extends AppCompatActivity {
 
 
 
+
     }
 
 
@@ -182,6 +183,8 @@ public class ChatScreen extends AppCompatActivity {
                 call.enqueue(new Callback<UserBean>() {
                     @Override
                     public void onResponse(Call<UserBean> call, Response<UserBean> response) {
+
+                        Log.d("dsklgvsd" , "mukul");
 
                         try {
                             adapter.setgrid(response.body().getData());

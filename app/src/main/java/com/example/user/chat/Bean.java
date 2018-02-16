@@ -13,5 +13,8 @@ public class Bean extends Application {
 
       public String user_id = "";
       public String usernmae = "";
+      public  String dob = "";
+      public  String time = "";
+      public  String pdob = "";
 
 }

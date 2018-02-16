@@ -89,6 +89,9 @@ public class Login extends AppCompatActivity {
 
                                     b.user_id = response.body().getData().getUserId();
                                     b.usernmae = response.body().getData().getName();
+                                    b.dob = response.body().getData().getBirthDate();
+                                    b.time = response.body().getData().getBirthTime();
+                                    b.pdob = response.body().getData().getBirthPlace();
 
                                     edit.putString("mobile" , m);
                                     edit.putString("password" , p);
