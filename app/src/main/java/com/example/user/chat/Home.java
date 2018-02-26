@@ -32,7 +32,6 @@ import retrofit2.converter.scalars.ScalarsConverterFactory;
 public class Home extends AppCompatActivity {
 
     Button chat;
-    TextView des;
 
     ImageView logout;
 
@@ -54,7 +53,7 @@ public class Home extends AppCompatActivity {
         pref = getSharedPreferences("pref", Context.MODE_PRIVATE);
         edit = pref.edit();
 
-        des = findViewById(R.id.texview);
+
         bar = findViewById(R.id.progress);
         chat = findViewById(R.id.chat);
         logout = findViewById(R.id.logout);

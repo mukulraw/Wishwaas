@@ -8,7 +8,7 @@ import android.app.Application;
 
 public class Bean extends Application {
 
-      public String baseurl = "http://nationproducts.in/";
+      public String baseurl = "http://wishwaas.com/";
 
 
       public String user_id = "";

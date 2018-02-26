@@ -22,88 +22,143 @@
             android:orientation="vertical">
 
 
-            <RelativeLayout
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <ImageView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="80dp"
+                android:layout_marginTop="20dp"
+                android:src="@drawable/wish" />
+
+            <ImageView
+                android:id="@+id/logout"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="18dp"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/logout" />
 
 
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="80dp"
-                    android:layout_marginTop="20dp"
-                    android:src="@drawable/wish" />
+        </RelativeLayout>
 
-                <ImageView
-                    android:id="@+id/logout"
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginEnd="18dp"
-                    android:layout_marginTop="10dp"
-                    android:src="@drawable/logout" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#cdcdcd" />
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/cdcd"
+            android:orientation="vertical">
 
-            </RelativeLayout>
 
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="#cdcdcd" />
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="5dp"
+                android:layout_marginStart="5dp"
+                android:padding="5dp"
+                android:text="हमारे बारे में :-"
+                android:layout_marginTop="5dp"
+                android:textColor="#000"
+                android:textStyle="bold" />
 
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginBottom="10dp"
-                android:layout_marginEnd="10dp"
-                android:textStyle="bold"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="10dp"
-                android:background="@drawable/cdcd"
                 android:padding="10dp"
-                android:text="हमारे बारे में :-
-
-विशप्प एक ऐसा मंच है जहाँ से कोई भी इंसान अपने जीवन की कोई भी विश या मनोकामना पूरी कर सकता है जो वो चाहे , जी हाँ यह सच है , ये कोई चमत्कार या कोई जादू नहीं है ब्लिक यह एक सीधा सरल और प्रकृतिक प्रक्रिया है जिसमें कि हम आपको बताते है की आप कैसे अपनी किसी भी विश/मनोकामना को पूरा कर सकते है अपने आप घर बेठे ।
-
-विशप्प का किसी धर्म या जाती से कोई सरोकार नई है इसलिए इसे हर धर्म /जाती के लोग इस्तेमाल कर सकते है ,इसमें किसी तरह की ज्योतिष या कोई अंधविश्वास फेलाने वाली प्रक्रिया भी नई है ..
-विशप्प का निर्माण हर इंसान को अपने अन्दअर की  छुपी शक्तियों का एहसास दिलाने के लिए किया गया है ,यह ऐप एक बहुत पहुँची हुई शकसियत की  कई सालों की गहन शोध के बाद तेयार हुई है जिसे की दुनिया भर में हज़ारों लोगों द्वारा प्रामणित करने के बाद दुनिया के लिए बिना किसी शुल्क के लोकार्पित किया गया है ।
-
-कैसे काम करती है ये ऐप :-
-
-विशप्प आपके भेजे हुए आँकड़े जोकि आपके जन्मतिथि (dob), जन्मस्थान (pob), जन्मसमय (tob) पर आधारित होते है उसके अनुसार आपकी माँगी गई विश/मुराद को ब्रह्हाण्ड के माक़ूल क्षेत्र में  आपके माक़ूल समय (dob,pob,tob) पे भेजता है  जिससे कि आपकी माँगी गयी विश/मुराद के पूरा होने के उमीद सबसे ज़्यादा होती है ।
-विशप्प आपको इसका पूरा विवरण और कार्यक्रम इसके कालमापन के साथ भेजता भी है
-आपको सिर्फ़ (make a wish) वाले बटन को दबा के अपनी जानकारी डालने के बाद अपनी विश/मुराद इसमें डालनी है जिससे की वो जल्द से जल्द पूरी हो सके
-यह ऐप एकदम निशुल्क है । और इसमें किसी प्रकार भी पैसों या किसी वस्तु  का अनुरोध नहीं किया जाता ।.
+                android:text="विशप्प एक ऐसा मंच है जहाँ से कोई भी इंसान अपने जीवन की कोई भी विश या मनोकामना पूरी कर सकता है जो वो चाहे , जी हाँ यह सच है , ये कोई चमत्कार या कोई जादू नहीं है ब्लिक यह एक सीधा सरल और प्रकृतिक प्रक्रिया है जिसमें कि हम आपको बताते है की आप कैसे अपनी किसी भी विश/मनोकामना को पूरा कर सकते है अपने आप घर बेठे ।\n\nविशप्प का किसी धर्म या जाती से कोई सरोकार नई है इसलिए इसे हर धर्म /जाती के लोग इस्तेमाल कर सकते है ,इसमें किसी तरह की ज्योतिष या कोई अंधविश्वास फेलाने वाली प्रक्रिया भी नई है ..\nविशप्प का निर्माण हर इंसान को अपने अन्दअर की  छुपी शक्तियों का एहसास दिलाने के लिए किया गया है ,यह ऐप एक बहुत पहुँची हुई शकसियत की  कई सालों की गहन शोध के बाद तेयार हुई है जिसे की दुनिया भर में हज़ारों लोगों द्वारा प्रामणित करने के बाद दुनिया के लिए बिना किसी शुल्क के लोकार्पित किया गया है ।
 " />
 
 
             <TextView
-                android:id="@+id/texview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="5dp"
+                android:layout_marginStart="5dp"
+                android:padding="5dp"
+                android:text="कैसे काम करती है ये ऐप :-"
+                android:textColor="#000"
+                android:textStyle="bold" />
+
+
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginBottom="10dp"
-                android:layout_marginEnd="10dp"
-                android:textStyle="bold"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="10dp"
-                android:background="@drawable/cdcd"
                 android:padding="10dp"
-                android:text="ABOUT US :
-Wishapp is platform from where anyone can fulfill all his/her wishes (of any kind) one dreams of fulfilling them in his/her life , yes ! This is true , this is not any magic or miracle but this is a simple and natural process which we gives you to achives yours wish or dream by your own.
-       Wishapp doesn't devotes to any religion, cast or culture so it can be used by all human beings of any religion or cast, this is not any astrology science neither it creates any kind of blind-faith in the society.
-       Wishapp is created to help all human beings to explore his/her internal powers, this is created by someone very special in this feild by his several years of reserch and verified successfully by thousands of people around the world absolutely free of any cost .
+                android:text="विशप्प आपके भेजे हुए आँकड़े जोकि आपके जन्मतिथि (dob), जन्मस्थान (pob), जन्मसमय (tob) पर आधारित होते है उसके अनुसार आपकी माँगी गई विश/मुराद को ब्रह्हाण्ड के माक़ूल क्षेत्र में  आपके माक़ूल समय (dob,pob,tob) पे भेजता है  जिससे कि आपकी माँगी गयी विश/मुराद के पूरा होने के उमीद सबसे ज़्यादा होती है ।\nविशप्प आपको इसका पूरा विवरण और कार्यक्रम इसके कालमापन के साथ भेजता भी है आपको सिर्फ़ (make a wish) वाले बटन को दबा के अपनी जानकारी डालने के बाद अपनी विश/मुराद इसमें डालनी है जिससे की वो जल्द से जल्द पूरी हो सके\n यह ऐप एकदम निशुल्क है । और इसमें किसी प्रकार भी पैसों या किसी वस्तु  का अनुरोध नहीं किया जाता ।" />
 
-HOW IT WORKS :
 
-         Wishapp collects your data based on your personel details such as Date of birth (DOB), Place of birth (POB), Time of birth (TOB) and then according to yours details wishapp launches your wish's collective data to the appropriate part of this universe at the exact time (matches to your DOB, POB, TOB ) , so that there will be the maximum chances of fullfilling of your wish .
-         Wishapp also sends you the details of procedure and timing of your wish sends to the universe .
-         Just click on the button (MAKE A WISH) and fills your details and makes your wish to comes true as soon as posible.
-         This app is absolutely free to use.
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/cdcd"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="5dp"
+                android:layout_marginStart="5dp"
+                android:padding="5dp"
+                android:text="ABOUT US :"
+                android:layout_marginTop="5dp"
+                android:textColor="#000"
+                android:textStyle="bold" />
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:padding="10dp"
+                android:text="Wishapp is a platform from where anyone can fullfill all his/her wishes (any kind of wish) he/she has dream of fullfilling it in his/her life, yes this is true , this is not any magic or miracle this is a simple and natural process which we gives you to fullfill your dream or wish by your own.\n\nWishapp does'nt devotes to any religion, cast or culture so it can be used by all human beings of any religion or cast , this is not any astrology neither it creates any kind of blindfaith to the society.\n\nWishapp is created to help all human beings to explore his/her internal powers, this is created by someone very special in this feild by his severals years of reserch and verified on thausands of peoples across the world." />
+
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="5dp"
+                android:layout_marginStart="5dp"
+                android:padding="5dp"
+                android:text="HOW IT WORKS "
+                android:textColor="#000"
+                android:textStyle="bold" />
+
+
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:padding="10dp"
+                android:text="Wishapp collects yours data based on your personel details such as date of birth(DOB), place of birth(POB), time of birth(TOB) and then according to yours details Wishapp lounches yours wish's collective data to the appropriate part of this universe at the exact time (matches to yours DOB ,POB , TOB ) so that there will be the maximum chances of fullfiling of your wish\n\nWishapp also sends you the details of procedure and timing of your wish send to the universe.\n\nJust click on the button (MAKE A WISH) and fill yours details and make your wish comes true
 " />
 
 
+        </LinearLayout>
         </LinearLayout>
 
 
@@ -113,19 +168,18 @@ HOW IT WORKS :
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:background="#fff"
-        android:layout_alignParentBottom="true">
-
-
+        android:layout_alignParentBottom="true"
+        android:background="#ffe9c3"
+        android:orientation="vertical">
 
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="5dp"
-            android:layout_marginStart="10dp"
             android:layout_marginEnd="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
             android:orientation="horizontal"
             android:weightSum="3">
 
@@ -157,18 +211,18 @@ HOW IT WORKS :
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="2"
-                android:layout_marginEnd="30dp">
+                android:layout_marginEnd="30dp"
+                android:layout_weight="2">
 
                 <TextView
+                    android:id="@+id/dob"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/dob"
-                    android:textColor="#000"
+                    android:background="@drawable/cdcdcd"
                     android:padding="3dp"
-                    android:paddingStart="10dp"
                     android:paddingEnd="10dp"
-                    android:background="@drawable/cdcdcd"/>
+                    android:paddingStart="10dp"
+                    android:textColor="#000" />
             </LinearLayout>
 
 
@@ -210,18 +264,18 @@ HOW IT WORKS :
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="2"
-                android:layout_marginEnd="30dp">
+                android:layout_marginEnd="30dp"
+                android:layout_weight="2">
 
                 <EditText
                     android:id="@+id/pdob"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:background="@drawable/cdcdcd"
                     android:padding="1dp"
-                    android:textColor="#000"
-                    android:paddingStart="10dp"
                     android:paddingEnd="10dp"
-                    android:background="@drawable/cdcdcd"/>
+                    android:paddingStart="10dp"
+                    android:textColor="#000" />
             </LinearLayout>
 
 
@@ -264,22 +318,20 @@ HOW IT WORKS :
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="2"
-                android:layout_marginEnd="30dp">
+                android:layout_marginEnd="30dp"
+                android:layout_weight="2">
 
                 <TextView
                     android:id="@+id/time"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:padding="3dp"
-                    android:textColor="#000"
-                    android:paddingStart="10dp"
-                    android:paddingEnd="10dp"
                     android:background="@drawable/cdcdcd"
-                     />
+                    android:padding="3dp"
+                    android:paddingEnd="10dp"
+                    android:paddingStart="10dp"
+                    android:textColor="#000" />
             </LinearLayout>
         </LinearLayout>
-
 
 
         <Button
@@ -299,7 +351,7 @@ HOW IT WORKS :
             android:paddingEnd="10dp"
             android:paddingStart="10dp"
             android:paddingTop="10dp"
-            android:text="Make Wish"
+            android:text="Make A Wish"
             android:textColor="#fff" />
 
 
@@ -307,13 +359,11 @@ HOW IT WORKS :
 
 
     <ProgressBar
-        android:layout_width="wrap_content"
         android:id="@+id/progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:visibility="gone"
-        android:layout_height="wrap_content" />
-
-
+        android:visibility="gone" />
 
 
 </RelativeLayout>

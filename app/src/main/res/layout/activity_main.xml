@@ -39,8 +39,8 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="10dp"
             android:layout_marginStart="10dp"
-            android:hint="Old Password"
-            android:inputType="textPassword"
+            android:hint="Mobile"
+            android:inputType="phone"
             android:padding="10dp" />
 
         <EditText
@@ -51,6 +51,7 @@
             android:layout_marginStart="10dp"
             android:layout_marginTop="10dp"
             android:hint="New Password"
+            android:visibility="gone"
             android:inputType="textPassword"
             android:padding="10dp" />
 
@@ -60,6 +61,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginEnd="10dp"
+            android:visibility="gone"
             android:layout_marginStart="10dp"
             android:layout_marginTop="10dp"
             android:hint="Confirm Password"

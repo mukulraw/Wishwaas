@@ -23,7 +23,7 @@ import retrofit2.converter.scalars.ScalarsConverterFactory;
 
 public class MainActivity extends AppCompatActivity {
 
-    EditText old , newpass , confirm;
+    EditText mobile;
 
     Button resetpassword;
 
@@ -36,10 +36,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        old = findViewById(R.id.oldpassword);
+        mobile = findViewById(R.id.oldpassword);
         back = findViewById(R.id.back);
-        newpass = findViewById(R.id.password);
-        confirm = findViewById(R.id.confirm);
+
         resetpassword = findViewById(R.id.resetpassword);
         bar = findViewById(R.id.progress);
 
@@ -57,68 +56,57 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
 
 
-                String o = old.getText().toString();
-                String newpa = newpass.getText().toString();
-                String c = confirm.getText().toString();
-
-                if (o.length()>0) {
+                String m = mobile.getText().toString();
 
 
-                    if (newpa.length()>0){
-
-                        if (Objects.equals(c, newpa)){
+                if (Utils.isValidMobile(m)) {
 
 
-                            bar.setVisibility(View.VISIBLE);
+                    bar.setVisibility(View.VISIBLE);
 
-                            Bean b = (Bean)getApplicationContext();
+                    Bean b = (Bean) getApplicationContext();
 
-                            Retrofit retrofit = new Retrofit.Builder()
-                                    .baseUrl(b.baseurl)
-                                    .addConverterFactory(ScalarsConverterFactory.create())
-                                    .addConverterFactory(GsonConverterFactory.create())
-                                    .build();
+                    Retrofit retrofit = new Retrofit.Builder()
+                            .baseUrl(b.baseurl)
+                            .addConverterFactory(ScalarsConverterFactory.create())
+                            .addConverterFactory(GsonConverterFactory.create())
+                            .build();
 
-                            AllApi cr = retrofit.create(AllApi.class);
+                    AllApi cr = retrofit.create(AllApi.class);
 
-                            Call<ForgotBean> call = cr.forgot(b.user_id , o , newpa , c);
+                    Call<ForgotBean> call = cr.forgot(m);
 
-                            call.enqueue(new Callback<ForgotBean>() {
-                                @Override
-                                public void onResponse(Call<ForgotBean> call, Response<ForgotBean> response) {
+                    call.enqueue(new Callback<ForgotBean>() {
+                        @Override
+                        public void onResponse(Call<ForgotBean> call, Response<ForgotBean> response) {
 
-                                    Toast.makeText(MainActivity.this, response.body().getMessage(), Toast.LENGTH_SHORT).show();
-                                    bar.setVisibility(View.GONE);
-                                    finish();
+                            if (Objects.equals(response.body().getStatus(), "1")) {
 
+                                Toast.makeText(MainActivity.this, response.body().getMessage(), Toast.LENGTH_SHORT).show();
+                                bar.setVisibility(View.GONE);
+                                finish();
+                            } else {
 
+                                Toast.makeText(MainActivity.this, response.body().getMessage(), Toast.LENGTH_SHORT).show();
+                                bar.setVisibility(View.GONE);
 
-                                }
-
-                                @Override
-                                public void onFailure(Call<ForgotBean> call, Throwable t) {
-
-                                    bar.setVisibility(View.GONE);
-
-
-                                }
-                            });
+                            }
 
 
-
-                        }else
-                        {
-                            Toast.makeText(MainActivity.this, "Password didn't match", Toast.LENGTH_SHORT).show();
                         }
 
+                        @Override
+                        public void onFailure(Call<ForgotBean> call, Throwable t) {
 
-                    }else {
+                            bar.setVisibility(View.GONE);
 
-                        Toast.makeText(MainActivity.this, "Invalid NewPassword", Toast.LENGTH_SHORT).show();
-                    }
 
-                }else {
-                    Toast.makeText(MainActivity.this, "Invalid Old Password", Toast.LENGTH_SHORT).show();
+                        }
+                    });
+
+
+                } else {
+                    Toast.makeText(MainActivity.this, "Invalid Mobile Number", Toast.LENGTH_SHORT).show();
                 }
 
 

@@ -17,10 +17,10 @@ public class ForgotBean {
     private String message;
     @SerializedName("status")
     @Expose
-    private Integer status;
-    @SerializedName("Data")
+    private String status;
+    @SerializedName("data")
     @Expose
-    private List<Object> data = null;
+    private Data data;
 
     public String getMessage() {
         return message;
@@ -30,19 +30,19 @@ public class ForgotBean {
         this.message = message;
     }
 
-    public Integer getStatus() {
+    public String getStatus() {
         return status;
     }
 
-    public void setStatus(Integer status) {
+    public void setStatus(String status) {
         this.status = status;
     }
 
-    public List<Object> getData() {
+    public Data getData() {
         return data;
     }
 
-    public void setData(List<Object> data) {
+    public void setData(Data data) {
         this.data = data;
     }
 

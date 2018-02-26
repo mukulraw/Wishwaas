@@ -20,7 +20,7 @@ public interface AllApi {
 
 
     @Multipart
-    @POST("wishwaas/api/sign_up.php")
+    @POST("wishapp/api/sign_up.php")
     Call<SignBean>call
             (@Part("username")String user ,
              @Part("mobile")String mobile ,
@@ -29,17 +29,16 @@ public interface AllApi {
 
 
     @Multipart
-    @POST("wishwaas/api/forget-password.php")
+    @POST("wishapp/api/forget-password.php")
     Call<ForgotBean>forgot
-            (@Part("user_id")String user ,
-             @Part("old_password")String mobile ,
-             @Part("new_password")String password ,
-             @Part("confirm_password")String fdgd
+            (@Part("mobile")String user
+
+
              );
 
 
     @Multipart
-    @POST("wishwaas/api/user_send_msg.php")
+    @POST("wishapp/api/user_send_msg.php")
     Call<Sendbean>send
             (@Part("user_id")String user ,
              @Part("reply_message")String mobile
@@ -47,21 +46,21 @@ public interface AllApi {
 
 
     @Multipart
-    @POST("wishwaas/api/mobile_signin.php")
+    @POST("wishapp/api/mobile_signin.php")
     Call<MoblileBean>mobile
             (@Part("mobile")String user ,
              @Part("password")String mobile
             );
 
     @Multipart
-    @POST("wishwaas/api/user_msg_list.php")
+    @POST("wishapp/api/user_msg_list.php")
     Call<UserBean>list
             (@Part("user_id")String user
             );
 
 
     @Multipart
-    @POST("wishwaas/api/update_user_birthday.php")
+    @POST("wishapp/api/update_user_birthday.php")
     Call<updateBean>update
             (@Part("user_id")String t ,
             @Part("birth_date")String tt ,
