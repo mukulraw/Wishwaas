@@ -5,17 +5,17 @@ android {
         config {
             keyAlias 'wish'
             keyPassword 'wish@123'
-            storeFile file('C:/Users/USER/Desktop/Wishapp/wish.jks')
+            storeFile file('C:/Users/USER/Desktop/chat.jks')
             storePassword 'wish@123'
         }
     }
     compileSdkVersion 26
     defaultConfig {
-        applicationId "com.example.user.chat"
+        applicationId "com.chat.chat"
         minSdkVersion 19
         targetSdkVersion 26
-        versionCode 1
-        versionName "1.0"
+        versionCode 3
+        versionName '1.2'
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         signingConfig signingConfigs.config
     }
